@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head >
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gobrat V5</title>
@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
-        
         body {
             background-color: #1e1e1e;
             color: #fff;
@@ -50,7 +49,6 @@
             font-size: 1.8rem;
             margin-left: 20px;
         }
-
         .robot-icon {
             width: 50px;
             height: 50px;
@@ -71,16 +69,23 @@
             text-align: center;
             margin-top: 50px;
         }
-        .login-container {
-            border-radius: 10px;
-            border: 1px solid #dee2e6;
-            animation: glow 3s infinite alternate; 
-            padding: 20px;
+
+        p {
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1rem;
+            color: #b0b0b0;
+        }
+        .home-container {
             position: relative;
+            animation: fade-in 0.5s ease-in-out forwards;
+            opacity: 0;
+            border-radius: 10px;
             background-color: #1e1e1e;
             text-align: center;
             margin-top: 10px;
         }
+
         .create-container {
             padding: 20px;
             position: relative;
@@ -90,70 +95,79 @@
             background-color: #1e1e1e;
             text-align: center;
             margin-top: 10px;
-            
         }
-        .password-container {
+        .email-container {
+            padding: 20px;
             position: relative;
+            border: 1px solid #dee2e6;
+            animation: glow 3s infinite alternate; 
             border-radius: 10px;
             background-color: #1e1e1e;
             text-align: center;
+            margin-top: 10px;
+        }
+        .operator-container {
+            padding: 20px;
+            position: relative;
+            border: 1px solid #dee2e6;
             animation: glow 3s infinite alternate; 
+            border-radius: 10px;
+            background-color: #1e1e1e;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .editbot-container {
+            padding: 20px;
+            position: relative;
+            border: 1px solid #dee2e6;
+            animation: glow 3s infinite alternate; 
+            border-radius: 10px;
+            background-color: #1e1e1e;
+            text-align: center;
             margin-top: 10px;
         }
 
-        p {
-            line-height: 1.8;
-            margin-bottom: 25px;
-            font-size: 1rem;
-            color: #b0b0b0;
-        }
 
-
-         @keyframes fade-in{
-  0% {
-      transform: translateY(-30%);
-    opacity: 0;
-  }
-  50% {
-      transform: translateY(-10%);
-    opacity: 0;
-  }
-  100% {
-      transform: translateY(0%);
-    opacity:1;
-  }
-}
-        input[type="password"], input[type="text"] {
-           width: 90%;
+        input[type="text"], textarea[type="appState"] {
+            width: 90%;
             padding: 15px;
             margin-bottom: 20px;
             border: 1px solid #444;
             border-radius: 5px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            border: 1px solid #dee2e6;
+            animation: glow 3s infinite alternate; 
             background-color: #333;
             color: #fff;
             font-size: 1.2rem;
-            animation: glow 3s infinite alternate; 
+            
         }
-
-        input[type="password"]:focus, input[type="text"]:focus {
+        .botlists  {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            border: 1px solid #dee2e6;
+            animation: glow 3s infinite alternate; 
+            background-color: #333;
+            color: #fff;
+            
+        }
+        .botlists:focus {
             border-color: #4CAF50;
             outline: none;
             box-shadow: 0 0 8px rgba(76, 175, 80, 0.6);
         }
 
-        .eye-icon {
-            position: absolute;
-            right: 30px;
-            top: 40%;
-            transform: translateY(-60%);
-            cursor: pointer;
-            color: #aaa;
-            font-size: 1.5rem;
+        input[type="text"]:focus {
+            border-color: #4CAF50;
+            outline: none;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.6);
         }
-
-        .eye-icon:hover {
-            color: #fff;
+        textarea[type="appState"]:focus {
+            border-color: #4CAF50;
+            outline: none;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.6);
         }
 
         button {
@@ -186,10 +200,10 @@
         }
 
         .tab button {
+            border: 1px solid #dee2e6;
+            animation: glow 3s infinite alternate; 
             flex: 1;
             padding: 15px 0;
-            border: 1px solid #dee2e6;
-            animation: glow 3s infinite alternate;
             background: transparent;
             font-size: 1.2rem;
             color: #fff;
@@ -229,7 +243,6 @@
             box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.5);
         }
         footer span {
-            
             color: #FF5252;
         }
 
@@ -264,7 +277,21 @@
                 padding: 20px;
             }
         }
-        .user-card {
+        @keyframes fade-in{
+  0% {
+      transform: translateY(-30%);
+    opacity: 0;
+  }
+  50% {
+      transform: translateY(-10%);
+    opacity: 0;
+  }
+  100% {
+      transform: translateY(0%);
+    opacity:1;
+  }
+}
+.user-card {
          display: flex;
          align-items: center;
          margin-bottom: 10px;
@@ -314,23 +341,52 @@
          }
          p.uptime-user {
          }
+         .loader {
+    display: none;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid blue;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.loading {
+    background-color: #ccc;
+    pointer-events: none;
+}
+     
     </style>
 </head>
 <body>
     <div class="header">
-        <div class="header-text">Gobrat V5</div>
+        <div class="header-text">GOBRAT V5</div>
         <div class="robot-icon"></div>
     </div>
 
     <div class="container">
-        <h4>LOG-IN TO CONTINUE</h4>
-        <p>configure your bot, using admin panel. </br></br>this project involving facebook messenger bots is solely for educational purposes. the bot's functionality is limited and may not be suitable for real-world applications. Any information or interactions with the bot should not be considered professional advice or a substitute for human interaction.</br></br>This project is strictly for educational purposes. It does not involve any hacking or other malicious online activities. </p>
-       <p></p>
+        <div class="home-container">
+            <h4>LOGGED IN AS ADMINISTRATOR</h4>
+        <p>configure your bot, using admin panel. </br></br>this project involving facebook messenger bots is solely for educational purposes. the bot's functionality is limited and may not be suitable for real-world applications. Any information or interactions with the bot should not be considered professional advice or a substitute for human interaction.</br></br></br>This project is strictly for educational purposes. It does not involve any hacking or other malicious online activities. </p>
+        <p></p>
         
+        </div>
+        <br>
         
         <div class="tab">
             <div class="tab-container">
-                <button class="tablinks active" onclick="openTab(event, 'Login')">ADMIN PANEL</button>
+                <button class="tablinks active" onclick="openTab(event, 'Create')">APPSTATE</button>
+                <button class="tablinks" onclick="openTab(event, 'Config')">CONFIG</button>
                 <button class="tablinks" onclick="openTab(event, 'About')">INFO</button>
             </div>
         </div>
@@ -343,27 +399,96 @@
          <div class="row" id="user_online"></div>
             </div>
         </div>
+        <div id="Config" class="tabcontent">
+            <div class="editbot-container">
+                   <p>select bot
+                   <select name="selectbots" class="botlists" id="listsofbots" onchange="detectedChanges(event)"></select>
+                   <p>edit bot name
+                   <input type="text" id="ebotname" placeholder="bot name">
+                    <button onclick="editBotName()">edit</button>
+                   <p>edit bot prefix
+                   <input type="text" id="ebotprefix" placeholder="bot prefix">
+                   <button onclick="editBotPrefix()">edit</button>
+                   <p>add bot admin
+                   <input type="text" id="ebotadmin" placeholder="facebook uid">
+                   <button onclick="addBotAdmin()">add</button>
+                   </p>
+               </div>
+               <div class="email-container">
+                   <p>edit email
+                   <input type="text" id="email" placeholder="example@whatever.com">
+                   <button onclick="editEmail()">edit</button>
+                   </p>
+               </div>
+               <div class="operator-container">
+                   <p>add operator
+                   <input type="text" id="operator" placeholder="facebook uid">
+                   <button onclick="addOperator()">add</button>
+                   </p>
+               </div>
+               
 
-        <div id="Login" class="tabcontent active">
-           
-            <div class="login-container">
-                
-                 <h3>Administrator Login</h3>
-                 <div class="password-container">
-                <input type="password" id="loginPassword" placeholder="Password" required>
-                <i class="eye-icon" onclick="togglePasswordVisibility()">🙈</i>
-                </div>
-                <button onclick="login()">LOGIN</button>
-            </div>
-            
+        </div>
+
+        <div id="Create" class="tabcontent active">
+            <h3></h3>
+            <div class="create-container">
+                <p>filename 
+        <input type="text" id="fileName" placeholder="ex: ryuko" required>
+        </p>
+        <p>bot name
+          <input type="text" id="botname" placeholder="bot name">
+            </p>
+            <p>bot prefix
+          <input type="text" id="botprefix" placeholder="bot prefix">
+            </p>
+            <p>bot admin
+          <input type="text" id="botadmin" placeholder="facebook uid">
+            </p>
+                <p>appstate 
+        <textarea id="appState" type="appState" rows="10" placeholder="paste your appstate here"></textarea>
+        
+            <button id="createbuttonn" onclick="createFile()">
+                    submit
+                </button>
+        
+        </p>
+           </div>
+          
         </div>
     </div>
-
     <footer>
         Designed by Bogart (Gwapo)
     </footer>
 
     <script>
+        
+        
+        async function listBots() {
+            const elm = document.getElementById("listsofbots");
+            try {
+             const df = document.createDocumentFragment();
+             const response = await fetch("/listBots");
+             const data = await response.json(); 
+             data.forEach(bot => {
+                 const {botId, name} = bot;
+                 var option = document.createElement('option');
+                 option.value = botId
+                 option.appendChild(document.createTextNode(name)); 
+                 df.appendChild(option);
+             });
+             elm.appendChild(df);
+            } catch (err) {
+                elm.innerHTML = `
+                <optgroup label="an error occurred while fetching data">
+  </optgroup>
+                `;
+            }
+        }
+        listBots();
+        function detectedChanges(e) {
+         document.getElementById("listsofbots").value = e.target.value;
+       }
         async function listOfAi() {
              const userOnline = document.getElementById("user_online");
              try {
@@ -406,7 +531,7 @@
                  });
              } catch (error) {
                  console.error(error);
-                 userOnline.innerHTML = `<div class="alert alert-danger" role="alert">An error occurred while fetching data.</div>`;
+                 userOnline.innerHTML = `<div class="alert alert-danger" role="alert">an error occurred while fetching data.</div>`;
              }
          }
          
@@ -439,6 +564,240 @@
 
          
          listOfAi();
+         function editBotName() {
+             const botid = document.getElementById('listsofbots').value;
+             const botname = document.getElementById('ebotname').value;
+             if (!botname) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Bot name is required',
+                    text: 'Please enter your bot name to continue.',
+                    confirmButtonColor: '#4CAF50'
+                });
+                return;
+            }
+            fetch('/editbotss', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ botid: botid, content: botname, type: "botname" })
+          }).then(response => response.json()).then(data => {
+              if (data.error) {
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Something went wrong',
+                    text: data.error,
+                    confirmButtonColor: '#4CAF50'
+                });
+              }
+              if (data.data) {
+                  Swal.fire({
+                    icon: 'success',
+                    title: 'Edited bot name successfully',
+                    text: 'automatically applied changes',
+                    confirmButtonColor: '#4CAF50'
+                }).then(() => {
+                    window.location.href;
+                });
+                  }
+          }).catch(err => {
+              Swal.fire({
+                    icon: 'error',
+                    title: 'Error editing bot name',
+                    text: err,
+                    confirmButtonColor: '#4CAF50'
+                });
+                return;
+          });
+         }
+         function editBotPrefix() {
+             const botid = document.getElementById('listsofbots').value;
+             const botprefix = document.getElementById('ebotprefix').value;
+             if (!botprefix) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Bot prefix is required',
+                    text: 'Please enter your bot prefix to continue.',
+                    confirmButtonColor: '#4CAF50'
+                });
+                return;
+            }
+            fetch('/editbotss', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ botid: botid, content: botprefix, type: "botprefix" })
+          }).then(response => response.json()).then(data => {
+              if (data.error) {
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Something went wrong',
+                    text: data.error,
+                    confirmButtonColor: '#4CAF50'
+                });
+              }
+              if (data.data) {
+                  Swal.fire({
+                    icon: 'success',
+                    title: 'Edited bot prefix successfully',
+                    text: 'automatically applied changes',
+                    confirmButtonColor: '#4CAF50'
+                }).then(() => {
+                    window.location.href;
+                });
+                  }
+          }).catch(err => {
+              Swal.fire({
+                    icon: 'error',
+                    title: 'Error editing bot prefix',
+                    text: err,
+                    confirmButtonColor: '#4CAF50'
+                });
+                return;
+          });
+         }
+         function addBotAdmin() {
+             const botid = document.getElementById('listsofbots').value;
+             const botadmin = document.getElementById('ebotadmin').value;
+             if (!botadmin) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Admin is required',
+                    text: 'Please enter your facebook uid to continue.',
+                    confirmButtonColor: '#4CAF50'
+                });
+                return;
+            }
+            fetch('/editbotss', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ botid: botid, content: botadmin, type: "botadmin" })
+          }).then(response => response.json()).then(data => {
+              if (data.error) {
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Something went wrong',
+                    text: data.error,
+                    confirmButtonColor: '#4CAF50'
+                });
+              }
+              if (data.data) {
+                  Swal.fire({
+                    icon: 'success',
+                    title: 'Added bot admin successfully',
+                    text: 'automatically applied changes',
+                    confirmButtonColor: '#4CAF50'
+                }).then(() => {
+                    window.location.href;
+                });
+                  }
+          }).catch(err => {
+              Swal.fire({
+                    icon: 'error',
+                    title: 'Error adding bot admin',
+                    text: err,
+                    confirmButtonColor: '#4CAF50'
+                });
+                return;
+          });
+         }
+        function editEmail() {
+            const Email = document.getElementById('email').value;
+            if (!Email) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Email is required',
+                    text: 'Please enter your email to continue.',
+                    confirmButtonColor: '#4CAF50'
+                });
+                return;
+            }
+            fetch('/configure', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ content: Email, type: "Email" })
+          }).then(response => response.json()).then(data => {
+              if (data.error) {
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Something went wrong',
+                    text: data.error,
+                    confirmButtonColor: '#4CAF50'
+                });
+              }
+              if (data.data) {
+                  Swal.fire({
+                    icon: 'success',
+                    title: 'Edited email successfully',
+                    text: 'automatically applied changes',
+                    confirmButtonColor: '#4CAF50'
+                }).then(() => {
+                    window.location.href;
+                });
+                  }
+          }).catch(err => {
+              Swal.fire({
+                    icon: 'error',
+                    title: 'Error editing email',
+                    text: err,
+                    confirmButtonColor: '#4CAF50'
+                });
+                return;
+          });
+          }
+          
+          function addOperator() {
+            const Operator = document.getElementById('operator').value;
+            if (!Operator) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'facebook id is required',
+                    text: 'Please enter your facebook id to continue.',
+                    confirmButtonColor: '#4CAF50'
+                });
+                return;
+            }
+            fetch('/configure', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ content: Operator, type: "Operator" })
+          }).then(response => response.json()).then(data => {
+              if (data.error) {
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Something went wrong',
+                    text: data.error,
+                    confirmButtonColor: '#4CAF50'
+                });
+              }
+              if (data.data) {
+                   Swal.fire({
+                    icon: 'success',
+                    title: 'Added operator successfully',
+                    text: 'automatically applied changes',
+                    confirmButtonColor: '#4CAF50'
+                }).then(() => {
+                    window.location.href;
+                });
+              }
+          }).catch(err => {
+              Swal.fire({
+                    icon: 'error',
+                    title: 'Error adding operator',
+                    text: err,
+                    confirmButtonColor: '#4CAF50'
+                });
+                return;
+          });
+          }
         function openTab(evt, tabName) {
             const tabcontent = document.querySelectorAll('.tabcontent');
             const tablinks = document.querySelectorAll('.tablinks');
@@ -449,76 +808,80 @@
             document.getElementById(tabName).classList.add('active');
             evt.currentTarget.classList.add('active');
         }
-
-        function togglePasswordVisibility() {
-            const passwordField = document.getElementById("loginPassword");
-            const eyeIcon = document.querySelector(".eye-icon");
-            if (passwordField.type === "password") {
-                passwordField.type = "text";
-                eyeIcon.textContent = "👁️";
-            } else {
-                passwordField.type = "password";
-                eyeIcon.textContent = "🙈";
-            }
-        }
-
-        function login() {
-            const loginPassword = document.getElementById("loginPassword").value.trim();
-
-            if (!loginPassword) {
+        const buttonss = document.getElementById('createbuttonn');
+         buttonss.addEventListener('click', () => {
+          buttonss.disabled = true;
+          setTimeout(() => {
+             buttonss.disabled = false;
+            }, 2000);
+          });
+        function createFile() {
+         
+          const fileName = document.getElementById('fileName').value;
+          const appState = document.getElementById('appState').value;
+          var botname = document.getElementById('botname').value;
+          var botprefix = document.getElementById('botprefix').value;
+          var botadmin = document.getElementById('botadmin').value;
+if (!fileName) {
                 Swal.fire({
                     icon: 'error',
-                    title: 'Password Required',
-                    text: 'Please enter your password to continue.',
+                    title: 'File name is required',
+                    text: 'Please enter your file name to continue.',
+                    confirmButtonColor: '#4CAF50'
+                });
+                return;
+            }
+if (!appState) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Appstate is required',
+                    text: 'Please enter your app state to continue.',
                     confirmButtonColor: '#4CAF50'
                 });
                 return;
             }
 
-            const data = { loginPassword };
-
-            fetch('/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.token) {
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Logged In Successfully',
-                            showConfirmButton: false,
-                            timer: 1500,
-                            background: '#333',
-                            color: '#fff',
-                            confirmButtonColor: '#4CAF50'
-                        }).then(() => {
-                            window.location.href = `/create.html?token=${data.token}`;
-                        });
-                    } else {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Invalid Password',
-                            text: 'Please try again.',
-                            background: '#333',
-                            color: '#fff',
-                            confirmButtonColor: '#4CAF50'
-                        });
-                    }
-                })
-                .catch(error => {
-                    console.error("Login error:", error);
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Login Error',
-                        text: 'An error occurred. Please try again.',
-                        background: '#333',
-                        color: '#fff',
-                        confirmButtonColor: '#4CAF50'
-                    });
+          fetch('/create', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ fileName: fileName, appState: appState, botName: botname, botPrefix: botprefix, botAdmin: botadmin  })
+          })
+          .then(response => response.json())
+          .then(data => {
+                if (data.error) {
+Swal.fire({
+                    icon: 'error',
+                    title: 'Something went wrong',
+                    text: data.error,
+                    confirmButtonColor: '#4CAF50'
                 });
-        }
+                return;
+                }
+                if (data.data) {
+Swal.fire({
+                    icon: 'success',
+                    title: 'Created appstate successfully',
+                    text: data.data,
+                    confirmButtonColor: '#4CAF50'
+                }).then(() => {
+                    window.location.href;
+                });
+                }
+          })
+          .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error creating appstate',
+                    text: error,
+                    confirmButtonColor: '#4CAF50'
+                });
+                return;
+          });
+      }
+        
+        
     </script>
 </body>
 </html>

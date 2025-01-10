@@ -27,7 +27,7 @@ module.exports.run = async function ({api, event, args}) {
   if (res.error) {
     return api.sendMessage('having some unexpected error while fetching api.', event.threadID, event.messageID)
   } else {
-    return api.sendMessage(`${reply}`, event.threadID, event.messageID)
+    return api.sendMessage(`•| 𝙱𝙾𝙶𝙰𝚁𝚃 𝙰𝙸 𝙱𝙾𝚃 |•\n\n${reply}\n\n•| 𝙲𝚁𝙴𝙰𝚃𝙴𝙳 𝙱𝚈 𝙱𝙾𝙶𝙰𝚁𝚃 𝙼𝙰𝙶𝙰𝙻𝙿𝙾𝙺 |•`, event.threadID, event.messageID)
   }
   } catch (error) {
     return api.sendMessage('having some unexpected error', event.threadID, event.messageID)

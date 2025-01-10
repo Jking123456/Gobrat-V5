@@ -376,17 +376,13 @@
 
     <div class="container">
         <div class="home-container">
-            <h4>LOGGED IN AS ADMINISTRATOR</h4>
-        <p>configure your bot, using admin panel. </br></br>this project involving facebook messenger bots is solely for educational purposes. the bot's functionality is limited and may not be suitable for real-world applications. Any information or interactions with the bot should not be considered professional advice or a substitute for human interaction.</br></br></br>This project is strictly for educational purposes. It does not involve any hacking or other malicious online activities. </p>
-        <p></p>
-        
+            <h4>CREATE YOUR BOT NOW!</h4>
         </div>
         <br>
         
         <div class="tab">
             <div class="tab-container">
                 <button class="tablinks active" onclick="openTab(event, 'Create')">APPSTATE</button>
-                <button class="tablinks" onclick="openTab(event, 'Config')">CONFIG</button>
                 <button class="tablinks" onclick="openTab(event, 'About')">INFO</button>
             </div>
         </div>
@@ -399,37 +395,6 @@
          <div class="row" id="user_online"></div>
             </div>
         </div>
-        <div id="Config" class="tabcontent">
-            <div class="editbot-container">
-                   <p>select bot
-                   <select name="selectbots" class="botlists" id="listsofbots" onchange="detectedChanges(event)"></select>
-                   <p>edit bot name
-                   <input type="text" id="ebotname" placeholder="bot name">
-                    <button onclick="editBotName()">edit</button>
-                   <p>edit bot prefix
-                   <input type="text" id="ebotprefix" placeholder="bot prefix">
-                   <button onclick="editBotPrefix()">edit</button>
-                   <p>add bot admin
-                   <input type="text" id="ebotadmin" placeholder="facebook uid">
-                   <button onclick="addBotAdmin()">add</button>
-                   </p>
-               </div>
-               <div class="email-container">
-                   <p>edit email
-                   <input type="text" id="email" placeholder="example@whatever.com">
-                   <button onclick="editEmail()">edit</button>
-                   </p>
-               </div>
-               <div class="operator-container">
-                   <p>add operator
-                   <input type="text" id="operator" placeholder="facebook uid">
-                   <button onclick="addOperator()">add</button>
-                   </p>
-               </div>
-               
-
-        </div>
-
         <div id="Create" class="tabcontent active">
             <h3></h3>
             <div class="create-container">
